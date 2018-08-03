@@ -1,0 +1,60 @@
+.card-banner {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    background-color: #fff;
+    background-size: cover;
+    border-radius: 5px;
+    margin: 0px !important;
+
+}
+.card-banner .card-body {
+    background-size: cover;
+    position: relative;
+    z-index: 10;
+]}
+
+.card {
+	margin: 5px !important;
+}
+
+.card-title {
+	color: #fff !important;
+	font-weight: 900 !important;
+}
+/* overlay effects */
+.overlay-cover {
+    top: 19;
+    left: 0;
+    right: 0;
+    bottom: 20;
+    position: absolute;
+    width: 100%;
+}
+.overlay {
+    background-color: rgba(0,0,0,0.65);
+    z-index: 10;
+    padding: 1.25rem;
+    color: #fff;
+}
+.overlay-grad {
+    position: relative;
+}
+
+.overlay-grad::before {
+    position: absolute;
+    content: "";
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #e83e8c;
+    background: -webkit-gradient(linear, left top, right bottom, from(#007bff), to(#e83e8c));
+    background: linear-gradient(to bottom right, #007bff, #e83e8c);
+    opacity: .6;
+    transition: .5s;
+}
+.overlay-grad:hover:before{
+     opacity: .9;
+}
