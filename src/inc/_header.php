@@ -44,7 +44,7 @@ nav.pb_scrolled-light {
       <div class="container">
       <div class="row">
 			  <div class="col-md-6 col-xs-9 col-sm-9">
-				<a href="./"><img  style="padding-top: 5px;" width="1200px" src="../src/lib/assets/images/brand/logo.png"/ class="img-fluid logo"></a>
+				<a href="./"><img  style="padding-top: 5px;" width="1200px" src="../src/lib/assets/images/brand/logo.png" class="img-fluid logo"></a>
 			</div>
 			<div class="col-md-6 col-xs-3 col-sm-3 pull-right">
 				<button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#probootstrap-navbar" aria-controls="probootstrap-navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,18 +54,20 @@ nav.pb_scrolled-light {
       </div>
 		<div class="collapse navbar-collapse" id="probootstrap-navbar">
           <ul class="navbar-nav ml-auto" style="font-weight: 400;">
-            <li class="nav-item"><a style="color: #000;" class="nav-link" href="./">Home&nbsp;</a></li>
+            <li class="nav-item"><a style="color: #000;" class="nav-link" href="../account/profile">Home&nbsp;</a></li>
             <li class="nav-item"><a style="color: #000;" class="nav-link" href="../explore">Explore&nbsp;</a></li>
-            <li class="nav-item "><a style="color: #000;" class="nav-link" href="../"><span class="pb_rounded-4">Contest&nbsp;<i style="color: #000;" class="fa fa-lg fa-trophy "></i></span></a></li>
-            <li  style="color: #000;"class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="signin" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="" ><?php echo $log->_user('username');?>&nbsp;<i style="color: #000;" class="fa fa-lg fa-github"></i></span></a>
-				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-				  <a class="dropdown-item" href="./profile"><i class="fa fa-user-circle"></i>&nbsp;Profile</a>
-				  <a class="dropdown-item" href="#">My Contrib</a>
-				  <hr>
-				 <span class="dropdown-item" style="font-size:11px;">Ahmed</span>
-				  <a class="dropdown-item" href="logout"><i class="fa fa-poweroff"></i>&nbsp;Logout</a>
-				</div>
-            </li>
+            <li class="nav-item "><a style="color: #000;" class="nav-link" href="../"><span class="pb_rounded-4"><i style="color: #000;" class="fa fa-lg fa-trophy "></i></span></a></li>
+            <?php if(isset($_SESSION['dev_user'])){?>
+				<li  style="color: #000;"class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="signin" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="" ><?php echo $log->_user('username');?>&nbsp;<i style="color: #000;" class="fa fa-lg fa-github"></i></span></a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					  <a class="dropdown-item" href="../account/profile"><i class="fa fa-user-circle"></i>&nbsp;Profile</a>
+					  <a class="dropdown-item" href="#">My Contrib</a>
+					  <hr>
+					 <span class="dropdown-item" style="font-size:11px;">Ahmed</span>
+					  <a class="dropdown-item" href="logout"><i class="fa fa-poweroff"></i>&nbsp;Logout</a>
+					</div>
+				</li>
+			<?php }?>
           </ul>
         </div>
       </div>

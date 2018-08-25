@@ -52,18 +52,17 @@ nav.pb_scrolled-light {
         <div class="collapse navbar-collapse" id="probootstrap-navbar">
           <ul class="navbar-nav ml-auto" style="font-weight: 400;">
             <li class="nav-item"><a style="color: #000;" class="nav-link" href="./">Home&nbsp;<i style="color:#000;" class="fa fa-home"></i></a></li>
-            <li class="nav-item"><a style="color: #000;" class="nav-link" href="index">Topics&nbsp;<i style="color:#000;" class="fa fa-link"></i></a></li>
-            <li class="nav-item"><a style="color: #000;" class="nav-link" href="#section-faq"><span class="pb_rounded-4">Contest&nbsp;<i style="color: #000;" class="fa fa-lg fa-trophy "></i></span></a></li>
+            <li class="nav-item"><a style="color: #000;" class="nav-link" href="./explore">Explore&nbsp;<i style="color:#000;" class="fa fa-link"></i></a></li>
+            <li class="nav-item"><a style="color: #000;" class="nav-link" href="#section-faq"><span class="pb_rounded-4"><i style="color: #000;" class="fa fa-lg fa-trophy "></i></span></a></li>
             <li  style="color: #000;"class="nav-item"><a class="nav-link" href="signin"><span class="" >Sign in&nbsp;<i style="color: #000;" class="fa fa-lg fa-github"></i></span></a></li>
           </ul>
         </div>
         <?php } else {?>
 		<div class="collapse navbar-collapse" id="probootstrap-navbar">
           <ul class="navbar-nav ml-auto" style="font-weight: 400;">
-            <li class="nav-item"><a style="color: #000;" class="nav-link" href="./">Explore&nbsp;</a></li>
-            <li class="nav-item"><a style="color: #000;" class="nav-link" href="index">Topics</a></li>
-            <li class="nav-item"><a style="color: #000;" class="nav-link" href="#section-faq"><span class="pb_rounded-4">Comminity&nbsp;</span></a></li>
-            <li class="nav-item "><a style="color: #000;" class="nav-link" href="#section-faq"><span class="pb_rounded-4">Contest&nbsp;<i style="color: #000;" class="fa fa-lg fa-trophy "></i></span></a></li>
+            <li class="nav-item"><a style="color: #000;" class="nav-link" href="./">Home&nbsp;</a></li>
+            <li class="nav-item"><a style="color: #000;" class="nav-link" href="./explore">Explore</a></li>
+            <li class="nav-item "><a style="color: #000;" class="nav-link" href="#section-faq"><span class="pb_rounded-4"><i style="color: #000;" class="fa fa-lg fa-trophy "></i></span></a></li>
             <li  style="color: #000;"class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="signin" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="" ><?php echo $log->_user('username');?>&nbsp;<i style="color: #000;" class="fa fa-lg fa-github"></i></span></a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 				  <a class="dropdown-item" href="account/profile"><i class="fa fa-user-circle"></i>&nbsp;Profile</a>

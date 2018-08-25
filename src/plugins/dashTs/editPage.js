@@ -1,4 +1,8 @@
 $(function(){
+	
+	
+	
+	
 	//updating personal info
 	$.ajax({type: "GET",url: "../src/function.php",data: {'function':'_personal'},dataType: "text",success: function(response){$("#_personal").html(response);_update_personal();}});
 	// Feed Rule
@@ -14,6 +18,11 @@ $(function(){
 		dataType: "text",
 		success: function(response){
 			$("#_pp").html(response);
+			toggle_pp();
+			$("#file").change(function(){ 
+			readURL(this);
+		});
+			
 		}
 	});
 	
@@ -29,6 +38,31 @@ $(function(){
 		}
 	});
 });
+
+	function toggle_pp(){
+		$("#file").hide();
+		$("#up-img").hide();
+		
+		var btn = $("#save-profile");
+		
+		$("#trigger").click(function(e){
+			e.preventDefault();
+			$("#file").trigger('click');
+			$("#up-img").show();
+
+		});
+		
+		
+	}
+	
+	function readURL(input) {
+		if (input.files && input.files[0]) { var reader = new FileReader();
+			reader.onload = function (e) { $('#blah').attr('src', e.target.result); }
+		reader.readAsDataURL(input.files[0]); }
+	}
+	
+	
+	
 	function _update_personal(){
 		$("#_update_personal").click(function(e){
 			e.preventDefault();

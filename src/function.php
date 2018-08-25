@@ -171,6 +171,11 @@ switch($_func){
 	case '_p_contrib':
 		_p_contrib();
 		break;
+		
+	// section for banner
+	case 'topic_banner':
+		topic_banner();
+		break;
 }
 
 
@@ -285,9 +290,11 @@ function _pp(){
 		<div class="row align-items-center justify-content-center">
 			<div class="col-md-12">
 				<center>
-					<img style="width:200px;" src="../src/lib/assets/images/profile/'.$dd['img'].'" class="img-fluid"/>
+					<img id="blah" style="width:200px;" src="../src/lib/assets/images/profile/'.$dd['img'].'" class="img-fluid"/>
 					<br><br>
-					<button class="btn btn-danger">Change Picture&nbsp;&nbsp;<i class="fa fa-image"></i></button>
+					<input type="file" id="file"/>
+					<button id="trigger" class="btn btn-danger">Change Picture&nbsp;&nbsp;<i class="fa fa-image"></i></button>
+					<button id="up-img" class="btn btn-primary">Save&nbsp;&nbsp;<i class="fa fa-check-circle"></i></button>
 				</center>
 			</div>
 		</div>
@@ -512,5 +519,23 @@ function _p_contrib(){
 		</div>
 	';
 	print_r($res);
+}
+
+function topic_banner(){
+	global $conn;
+	$res = "";
+	if(!isset($_SESSION['dev_user'])){
+		$res = '
+			<div class="alert alert-success alert-dismissable row align-items-center">
+				<div class="col-md-12 col-xs-12 text-center">
+				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+					<p><strong style="font-weight:900;"><i class="fa fa-check-circle"></i></strong>&nbsp;&nbsp;Do you want to start a trend on a topic just like this one, Click the link below and get started!
+					<br>
+					<a style="color: #fff; font-weight: 800;" href="signin" class="btn btn-primary"><i class="fa fa-file"></i>&nbsp;Sign in</a></p>
+				</div>
+			</div>
+		';
+	}
+	echo $res;
 }
 ?>
